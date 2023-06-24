@@ -1,0 +1,64 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <style>
+    :root {
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      color: #202124;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      margin: 0px;
+      padding: 0px;
+      max-height: 100vh;
+      max-width: 100vw;
+      overflow: hidden;
+    }
+
+    #mfe-content {
+      display: flex;
+    }
+
+    button {
+      font-family: "Poppins", sans-serif;
+    }
+
+    p {
+      margin: 0px;
+    }
+  </style>
+  <main>
+    <nav>
+      <application name="@mfe/navbar"></application>
+    </nav>
+    <section id="mfe-content">
+      <aside>
+        <application name="@mfe/sidenav"></application>
+      </aside>
+      <route default>Rota default, uma rota de fallback caso tente acessar uma rota inexistente.</route>
+      <route path="/home">
+        <application name="@mfe/home"></application>
+      </route>
+    </section>
+  </main>
+</single-spa-router>
